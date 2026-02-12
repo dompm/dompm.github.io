@@ -1,105 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Dominique Piche-Meunier" />
-        <meta name="author" content="Dominique Piche-Meunier" />
-        <title>Dominique Piche-Meunier</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap CSS-->
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <!-- Material icons-->
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Dominique Piche-Meunier" />
+    <meta name="author" content="Dominique Piche-Meunier" />
+    <title>Dominique Piché-Meunier</title>
     
-    <body>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 offset-lg-2">
-                    <div class="row mt-5">
-                        <h1>Dominique Piché-Meunier</h1>
-                    </div>
-                    <div class="row">
-                        <a href="mailto:dominique.piche-meunier.1@ulaval.ca" class="text-secondary">dominique.piche-meunier.1@ulaval.ca</a>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <p>
-                                    I am a Machine Learning Engineer at <a href="https://adobe.com">Adobe</a>. I completed my master's degree in Electrical Engineering at the <a href="https://iid.ulaval.ca/en/">Institute Intelligence and Data (IID)</a> of Laval University, under the supervision of <a href="http://vision.gel.ulaval.ca/~jflalonde/">Jean-François Lalonde</a> and <a href="https://yannickhold.com/">Yannick Hold-Geoffroy</a>. My expertise lies in graphics, computer vision, and machine learning, with a keen interest in problems related to scene understanding and computational photography.
-                                </p>
-                                <p>
-                                    During my masters, I had the opportunity of doing two internships with <a href="https://adobe.com">Adobe</a>, one with the Adobe Research team (remote), and one with the 3D & Immersive team (San Francisco, CA). Before that, I completed my bachelor's degree in Engineering Physics at Laval University in 2021, during which I did two internships with the <a href="https://physmed.fsg.ulaval.ca/accueil/">Medical Physics Research Group</a> and the <a href="http://vision.gel.ulaval.ca/en/index.php">Computer Vision and Systems Laboratory</a>.
-                                </p>
-                            </div>
-                            <div class="text-center">
-                                <div style="white-space: pre-wrap;"><a href="mailto:dominique.piche-meunier.1@ulaval.ca">Email</a>  |  <a href="assets\cv_dominique_pichemeunier.pdf">CV</a>  |  <a href="https://scholar.google.com/citations?user=ybPPnRgAAAAJ">Google Scholar</a>  |  <a href="https://www.linkedin.com/in/dompm/">LinkedIn</a></div>
-                            </div>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+        }
+        h1 { font-weight: 800; }
+        .pub-row { margin-bottom: 2.5rem; transition: all 0.2s; }
+        .pub-img { 
+            width: 100%; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .profile-img {
+            max-width: 220px;
+            margin: 0 auto;
+            display: block;
+        }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .link-separator { color: #ccc; padding: 0 5px; }
+        
+        /* Mobile specific tweaks */
+        @media (max-width: 768px) {
+            .container {
+                padding-left: 1.5rem;   /* 24px – common comfortable mobile margin */
+                padding-right: 1.5rem;
+            }
+            .profile-section { text-align: left; }
+            .pub-row { text-align: left; }
+            .pub-img { max-width: 300px; margin-bottom: 1rem; }
+            h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-9 col-xl-8">
+                
+                <div class="row profile-section align-items-center">
+                    <div class="col-md-8 order-2 order-md-1">
+                        <h1 class="mt-3 mt-md-0">Dominique Piché-Meunier</h1>
+                        <p class="mb-3">
+                            <a href="mailto:dominique.piche-meunier.1@ulaval.ca" class="text-secondary">dominique.piche-meunier.1@ulaval.ca</a>
+                        </p>
+                        
+                        <div class="pe-md-4">
+                            <p>
+                                I am a Machine Learning Engineer at <a href="https://adobe.com">Adobe</a>. I completed my master's degree in Electrical Engineering at the <a href="https://iid.ulaval.ca/en/">Institute Intelligence and Data (IID)</a> of Laval University, under the supervision of <a href="http://vision.gel.ulaval.ca/~jflalonde/">Jean-François Lalonde</a> and <a href="https://yannickhold.com/">Yannick Hold-Geoffroy</a>. My expertise is in 3D computer vision, multimodal generative models, and high-performance distributed systems.
+                            </p>
+                            <p>
+                                During my masters, I had the opportunity of doing two internships with <a href="https://adobe.com">Adobe</a>, one with the Adobe Research team and one with the 3D & Immersive team in San Francisco. Before that, I completed my bachelor's degree in Engineering Physics at Laval University.
+                            </p>
                         </div>
-                        <div class="col-lg-4">
-                            <img src="assets/dominique.jpg" class="img-fluid rounded-circle" alt="Dominique Piché-Meunier">
-                        </div>
-                    </div>
-                    <div class="row mt-4">
-                        <h3>Publications</h3>
-                    </div>
-                    <!-- InverseDOF -->
-                    <div class="row">
-                        <div class="col-lg-3 px-0">
-                            <img src="assets/inversedof_teaser.gif" class="img-fluid" alt="inversedof">
-                        </div>
-                        <div class="col-lg-9">
-                            <a href="https://lvsn.github.io/inversedof/"><h6>Lens Parameter Estimation for Realistic Depth of Field Modeling</h6></a>
-                            <a href="https://dompm.github.io">Dominique Piche‑Meunier</a>, <a href="https://yannickhold.com/">Yannick Hold‑Geoffroy</a>, <a href="https://jimmie33.github.io/">Jianming Zhang</a>, <a href="http://vision.gel.ulaval.ca/~jflalonde/">Jean‑François Lalonde</a><br>
-                            <i>International Conference on Computer Vision (ICCV), 2023</i>
-                        </div>
-                    </div>
-                    <!-- Salary structures  -->
-                    <div class="row mt-3">
-                        <div class="col-lg-3 px-0">
-                            <img src="assets/pareto_teaser.gif" class="img-fluid" alt="salary_structures">
-                        </div>
-                        <div class="col-lg-9">
-                            <a href="https://salarystructureoptimization.github.io/"><h6>Multiobjective Optimisation for Designing Salary Structures</h6></a>
-                            François Alexandre Tremblay, <a href="https://dompm.github.io">Dominique Piche‑Meunier</a>, Louis Dubois<br>
-                            <i>International Conference on the Integration of Constraint Programming, Artificial Intelligence, and Operations Research (CPAIOR), 2023</i>
-                        </div>
-                    </div>
-                    <!-- Deepcalib -->
-                    <div class="row mt-3">
-                        <div class="col-lg-3 px-0">
-                            <img src="assets/deepcalib_teaser.gif" class="img-fluid" alt="salary_structures">
-                        </div>
-                        <div class="col-lg-9">
-                            <a href="https://lvsn.github.io/deepcalib/"><h6>A Deep Perceptual Measure for Lens and Camera Calibration</h6></a>
-                            <a href="https://yannickhold.com/">Yannick Hold‑Geoffroy</a>, <a href="https://dompm.github.io">Dominique Piche‑Meunier</a>, <a href="http://www.kalyans.org/">Kalyan Sunkavalli</a>, Jean-Charles Bazin</a>, <a href="https://rameau-fr.github.io/">Francois Rameau</a>, <a href="http://vision.gel.ulaval.ca/~jflalonde/">Jean‑François Lalonde</a><br>
-                            <i>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2023</i>
-                        </div>
-                    </div>
-                    <!-- mPSD -->
-                    <div class="row mt-3">
-                        <div class="col-lg-3 px-0">
-                            <img src="assets/robot_teaser.gif" class="img-fluid" alt="salary_structures">
-                        </div>
-                        <div class="col-lg-9">
-                            <a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.15257"><h6>A high‐Z inorganic scintillator–based detector for time‐resolved in vivo dosimetry during brachytherapy</h6></a>
-                            Erik B Jørgensen, Jacob G Johansen, Joakim Overgaard, <a href="https://dompm.github.io">Dominique Piché‐Meunier</a>, Daline Tho, Haydee ML Rosales, Kari Tanderup, <a href="https://www.crchudequebec.ulaval.ca/en/research/researchers/luc-beaulieu/">Luc Beaulieu</a>, Gustavo Kertzscher, <a href="https://faculty.mdanderson.org/profiles/sam_beddar.html">Sam Beddar</a><br>
-                            <i>Medical physics, 2021</i>
+
+                        <div class="mt-4 mb-5 mb-md-0">
+                            <a href="mailto:dominique.piche-meunier.1@ulaval.ca">Email</a><span class="link-separator">|</span>
+                            <a href="assets/cv_dominique_pichemeunier.pdf">CV</a><span class="link-separator">|</span>
+                            <a href="https://scholar.google.com/citations?user=ybPPnRgAAAAJ">Scholar</a><span class="link-separator">|</span>
+                            <a href="https://www.linkedin.com/in/dompm/">LinkedIn</a>
                         </div>
                     </div>
-                    <div class="row mt-5">
+                    
+                    <div class="col-md-4 order-1 order-md-2 mb-4 mb-md-0">
+                        <img src="assets/dominique.jpg" class="img-fluid rounded-circle profile-img shadow-sm" alt="Dominique Piché-Meunier">
                     </div>
                 </div>
+
+                <hr class="my-5">
+
+                <h3 class="mb-4">Publications</h3>
+
+                <div class="row pub-row">
+                    <div class="col-md-4 col-lg-3">
+                        <img src="assets/inversedof_teaser.gif" class="pub-img" alt="inversedof">
+                    </div>
+                    <div class="col-md-8 col-lg-9">
+                        <a href="https://lvsn.github.io/inversedof/"><strong>Lens Parameter Estimation for Realistic Depth of Field Modeling</strong></a><br>
+                        <span class="small">Dominique Piché‑Meunier, Yannick Hold‑Geoffroy, Jianming Zhang, Jean‑François Lalonde</span><br>
+                        <i class="small text-muted">International Conference on Computer Vision (ICCV), 2023</i>
+                    </div>
+                </div>
+
+                <div class="row pub-row">
+                    <div class="col-md-4 col-lg-3">
+                        <img src="assets/pareto_teaser.gif" class="pub-img" alt="salary_structures">
+                    </div>
+                    <div class="col-md-8 col-lg-9">
+                        <a href="https://salarystructureoptimization.github.io/"><strong>Multiobjective Optimisation for Designing Salary Structures</strong></a><br>
+                        <span class="small text-muted">François Alexandre Tremblay, Dominique Piché‑Meunier, Louis Dubois</span><br>
+                        <i class="small text-muted">CPAIOR, 2023</i>
+                    </div>
+                </div>
+
+                <div class="row pub-row">
+                    <div class="col-md-4 col-lg-3">
+                        <img src="assets/deepcalib_teaser.gif" class="pub-img" alt="deepcalib">
+                    </div>
+                    <div class="col-md-8 col-lg-9">
+                        <a href="https://lvsn.github.io/deepcalib/"><strong>A Deep Perceptual Measure for Lens and Camera Calibration</strong></a><br>
+                        <span class="small">Yannick Hold‑Geoffroy, Dominique Piché‑Meunier, Kalyan Sunkavalli, Jean-Charles Bazin, Francois Rameau, Jean‑François Lalonde</span><br>
+                        <i class="small text-muted">IEEE TPAMI, 2023</i>
+                    </div>
+                </div>
+
+                <div class="row pub-row">
+                    <div class="col-md-4 col-lg-3">
+                        <img src="assets/robot_teaser.gif" class="pub-img" alt="dosimetry">
+                    </div>
+                    <div class="col-md-8 col-lg-9">
+                        <a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.15257"><strong>A high‐Z inorganic scintillator–based detector for time‐resolved in vivo dosimetry</strong></a><br>
+                        <span class="small text-muted">Erik B Jørgensen, et al. (including Dominique Piché-Meunier)</span><br>
+                        <i class="small text-muted">Medical Physics, 2021</i>
+                    </div>
+                </div>
+
+                <footer class="mt-5 pt-5 text-center text-muted small">
+                    &copy; 2026 Dominique Piché-Meunier
+                </footer>
+
             </div>
         </div>
-        <!-- JQuerry -->
-        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-        <!-- Math jax -->
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    </body>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
