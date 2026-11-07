@@ -56,7 +56,8 @@
         .project-links a { text-decoration: none; }
         .project-links a:hover { text-decoration: underline; }
         .papers { list-style: none; margin: 0; padding: 0; }
-        .paper { display: grid; grid-template-columns: minmax(0, 1fr) 140px; gap: 32px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+        .paper { display: grid; grid-template-columns: 140px minmax(0, 1fr) 140px; gap: 24px; align-items: start; padding: 24px 0; border-bottom: 1px solid var(--line); }
+        .paper-teaser { display: block; width: 140px; height: auto; border-radius: 4px; }
         .paper:first-child { padding-top: 0; }
         .paper:last-child { border-bottom: 0; padding-bottom: 0; }
         .paper h3 { font-size: 17px; margin: 0 0 8px; font-weight: 500; line-height: 1.5; letter-spacing: -.015em; }
@@ -84,7 +85,8 @@
             .project-visual.woodworking { padding: 0; }
             .project-visual img { width: 96px; height: 96px; }
             .paper { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
-            .venue { grid-row: 1; text-align: left; padding: 0; }
+            .paper-teaser { width: 160px; margin-bottom: 8px; }
+            .venue { text-align: left; padding: 0; }
             .paper h3 { font-size: 16px; }
             footer { flex-wrap: wrap; gap: 8px; }
         }
@@ -145,6 +147,7 @@
                 <h2 id="research-heading">Research</h2>
                 <ul class="papers">
                     <li class="paper">
+                        <img class="paper-teaser" src="assets/inversedof_teaser.gif" alt="Depth-of-field modeling research preview" width="320" height="240" loading="lazy">
                         <div>
                             <h3><a href="https://lvsn.github.io/inversedof/">Lens Parameter Estimation for Realistic Depth of Field Modeling</a></h3>
                             <details><summary>Authors</summary><p>Dominique Piché-Meunier, Yannick Hold-Geoffroy, Jianming Zhang, Jean-François Lalonde</p></details>
@@ -152,6 +155,7 @@
                         <div class="venue"><abbr title="International Conference on Computer Vision" style="text-decoration: none;">ICCV</abbr> · 2023</div>
                     </li>
                     <li class="paper">
+                        <img class="paper-teaser" src="assets/pareto_teaser.gif" alt="Salary structure optimization research preview" width="320" height="240" loading="lazy">
                         <div>
                             <h3><a href="https://salarystructureoptimization.github.io/">Multiobjective Optimisation for Designing Salary Structures</a></h3>
                             <details><summary>Authors</summary><p>François Alexandre Tremblay, Dominique Piché-Meunier, Louis Dubois</p></details>
@@ -159,6 +163,7 @@
                         <div class="venue">CPAIOR · 2023</div>
                     </li>
                     <li class="paper">
+                        <img class="paper-teaser" src="assets/deepcalib_teaser.gif" alt="Lens and camera calibration research preview" width="320" height="240" loading="lazy">
                         <div>
                             <h3><a href="https://lvsn.github.io/deepcalib/">A Deep Perceptual Measure for Lens and Camera Calibration</a></h3>
                             <details><summary>Authors</summary><p>Yannick Hold-Geoffroy, Dominique Piché-Meunier, Kalyan Sunkavalli, Jean-Charles Bazin, Francois Rameau, Jean-François Lalonde</p></details>
@@ -166,6 +171,7 @@
                         <div class="venue">IEEE TPAMI · 2023</div>
                     </li>
                     <li class="paper">
+                        <img class="paper-teaser" src="assets/robot_teaser.gif" alt="In vivo dosimetry research preview" width="320" height="240" loading="lazy">
                         <div>
                             <h3><a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.15257">A high-Z inorganic scintillator–based detector for time-resolved in vivo dosimetry</a></h3>
                             <details><summary>Authors</summary><p>Erik B Jørgensen, et al. (including Dominique Piché-Meunier)</p></details>
