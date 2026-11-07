@@ -1,164 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="Dominique Piche-Meunier" />
-    <meta name="author" content="Dominique Piche-Meunier" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Dominique Piché-Meunier — Applied Scientist at Adobe. Projects and research in 3D computer vision, generative models, and distributed systems.">
+    <meta name="author" content="Dominique Piché-Meunier">
     <title>Dominique Piché-Meunier</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
     <style>
+        :root {
+            color-scheme: light;
+            --paper: #f8f7f3;
+            --ink: #272924;
+            --muted: #62665e;
+            --accent: #42604c;
+            --line: #dddfd5;
+        }
+        * { box-sizing: border-box; }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            color: #333;
-            line-height: 1.6;
+            margin: 0;
+            background: var(--paper);
+            color: var(--ink);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            font-size: 16px;
+            line-height: 1.65;
+            -webkit-font-smoothing: antialiased;
         }
-        h1 { font-weight: 800; }
-        .pub-row { margin-bottom: 2.5rem; transition: all 0.2s; }
-        .pub-img { 
-            width: 100%; 
-            border-radius: 8px; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-        .profile-img {
-            max-width: 220px;
-            margin: 0 auto;
-            display: block;
-        }
-        a { color: #0066cc; text-decoration: none; }
+        a { color: var(--accent); text-underline-offset: .2em; text-decoration-thickness: 1px; }
         a:hover { text-decoration: underline; }
-        .link-separator { color: #ccc; padding: 0 5px; }
-        
-        /* Mobile specific tweaks */
-        @media (max-width: 768px) {
-            .container {
-                padding-left: 1.5rem;   /* 24px – common comfortable mobile margin */
-                padding-right: 1.5rem;
-            }
-            .profile-section { text-align: left; }
-            .pub-row { text-align: left; }
-            .pub-img { max-width: 300px; margin-bottom: 1rem; }
-            h1 { font-size: 2rem; }
+        a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; border-radius: 2px; }
+        .page { width: min(100% - 64px, 920px); margin: auto; }
+        .skip-link { position: absolute; top: -80px; left: 20px; padding: 8px 16px; background: var(--paper); }
+        .skip-link:focus { top: 12px; }
+        .topbar { display: flex; justify-content: flex-end; gap: 26px; padding: 30px 0; }
+        .topbar a { font-size: 14px; text-decoration: none; color: var(--muted); }
+        .topbar a:hover { color: var(--ink); text-decoration: underline; }
+        .intro { display: grid; grid-template-columns: 1fr 152px; gap: 64px; align-items: center; padding: 52px 0 68px; }
+        h1 { font-size: clamp(27px, 3.6vw, 37px); line-height: 1.2; font-weight: 600; letter-spacing: -.045em; margin: 0 0 20px; }
+        .intro p { font-size: 18px; line-height: 1.65; margin: 0 0 22px; max-width: 590px; }
+        .intro p a { color: inherit; }
+        .portrait { display: block; width: 152px; height: 174px; object-fit: cover; border-radius: 5px; }
+        .contact { display: flex; flex-wrap: wrap; gap: 10px 24px; }
+        .contact a { font-size: 14px; text-decoration: none; }
+        .contact a:hover { text-decoration: underline; }
+        section { border-top: 1px solid var(--line); padding: 30px 0 48px; scroll-margin-top: 24px; }
+        h2 { font-size: 15px; font-weight: 600; margin: 0 0 28px; }
+        h3 { font-size: 19px; line-height: 1.4; letter-spacing: -.02em; font-weight: 550; margin: 0 0 10px; }
+        h3 a { color: var(--ink); text-decoration: none; }
+        .project { display: grid; grid-template-columns: 180px 1fr; gap: 32px; align-items: center; }
+        .project + .project { margin-top: 28px; }
+        .project-visual { display: grid; place-items: center; }
+        .project-visual img { display: block; width: 100px; height: 100px; }
+        .project-visual.woodworking img { width: 100%; height: auto; border-radius: 4px; }
+        .project p { margin: 0 0 14px; max-width: 590px; color: var(--muted); }
+        .project-links { display: flex; gap: 22px; font-size: 14px; }
+        .project-links a { text-decoration: none; }
+        .project-links a:hover { text-decoration: underline; }
+        .papers { list-style: none; margin: 0; padding: 0; }
+        .paper { display: grid; grid-template-columns: 140px minmax(0, 1fr) 140px; gap: 24px; align-items: start; padding: 24px 0; border-bottom: 1px solid var(--line); }
+        .paper-teaser { display: block; width: 140px; height: auto; border-radius: 4px; }
+        .paper:first-child { padding-top: 0; }
+        .paper:last-child { border-bottom: 0; padding-bottom: 0; }
+        .paper h3 { font-size: 17px; margin: 0 0 8px; font-weight: 500; line-height: 1.5; letter-spacing: -.015em; }
+        .venue { text-align: right; font-size: 13px; color: var(--muted); padding-top: 3px; }
+        details { font-size: 13px; color: var(--muted); }
+        summary { cursor: pointer; width: fit-content; }
+        details p { margin: 8px 0 0; max-width: 640px; }
+        .about-copy { max-width: 710px; color: var(--muted); }
+        .about-copy p { margin: 0 0 16px; }
+        .about-copy p:last-child { margin-bottom: 0; }
+        .about-copy a { color: inherit; }
+        footer { display: flex; justify-content: space-between; gap: 20px; padding: 24px 0 36px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+        footer a { color: inherit; text-decoration: none; }
+        @media (max-width: 640px) {
+            .page { width: calc(100% - 40px); }
+            .topbar { padding: 22px 0; gap: 24px; }
+            .intro { grid-template-columns: 1fr; gap: 24px; padding: 22px 0 40px; }
+            .portrait { grid-row: 1; width: 88px; height: 100px; }
+            .intro p { font-size: 17px; }
+            h1 { margin-bottom: 16px; }
+            section { padding: 24px 0 34px; }
+            h2 { margin-bottom: 22px; }
+            .project { grid-template-columns: 1fr; gap: 20px; }
+            .project-visual { padding: 16px 0; }
+            .project-visual.woodworking { padding: 0; }
+            .project-visual img { width: 96px; height: 96px; }
+            .paper { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
+            .paper-teaser { width: 160px; margin-bottom: 8px; }
+            .venue { text-align: left; padding: 0; }
+            .paper h3 { font-size: 16px; }
+            footer { flex-wrap: wrap; gap: 8px; }
         }
     </style>
 </head>
-
 <body>
-    <div class="container py-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-9 col-xl-8">
-                
-                <div class="row profile-section align-items-center">
-                    <div class="col-md-8 order-2 order-md-1">
-                        <h1 class="mt-3 mt-md-0">Dominique Piché-Meunier</h1>
-                        <p class="mb-3">
-                            <a class="obfuscate-email text-secondary" href="#" data-e="100,111,109,105,110,105,113,117,101,46,112,105,99,104,101,109,101,117,110,105,101,114,64,103,109,97,105,108,46,99,111,109"></a>
-                        </p>
-                        
-                        <div class="pe-md-4">
-                            <p>
-                                I am a Machine Learning Engineer at <a href="https://adobe.com">Adobe</a>. I completed my master's degree in Electrical Engineering at the <a href="https://iid.ulaval.ca/en/">Institute Intelligence and Data (IID)</a> of Laval University, under the supervision of <a href="http://vision.gel.ulaval.ca/~jflalonde/">Jean-François Lalonde</a> and <a href="https://yannickhold.com/">Yannick Hold-Geoffroy</a>. My expertise is in 3D computer vision, multimodal generative models, and high-performance distributed systems.
-                            </p>
-                            <p>
-                                During my masters, I had the opportunity of doing two internships with <a href="https://adobe.com">Adobe</a>, one with the Adobe Research team and one with the 3D & Immersive team in San Francisco. Before that, I completed my bachelor's degree in Engineering Physics at Laval University.
-                            </p>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="page">
+        <nav class="topbar" aria-label="Main navigation">
+            <a href="#projects">Projects</a>
+            <a href="#research">Research</a>
+            <a href="#about">About</a>
+        </nav>
+        <main id="main">
+            <header class="intro">
+                <div>
+                    <h1>Dominique Piché-Meunier</h1>
+                    <p>I’m an applied scientist at Adobe, working on 3D computer vision, multimodal generative models, and distributed systems.</p>
+                    <nav class="contact" aria-label="Contact and profiles">
+                        <a class="obfuscate-email" href="#contact" data-e="100,111,109,105,110,105,113,117,101,46,112,105,99,104,101,109,101,117,110,105,101,114,64,103,109,97,105,108,46,99,111,109">Email</a>
+                        <a href="assets/cv_dominique_pichemeunier.pdf">CV</a>
+                        <a href="https://scholar.google.com/citations?user=ybPPnRgAAAAJ">Scholar</a>
+                        <a href="https://www.linkedin.com/in/dompm/">LinkedIn</a>
+                    </nav>
+                </div>
+                <img class="portrait" src="assets/dominique.jpg" alt="Dominique Piché-Meunier" width="152" height="174">
+            </header>
+            <section id="projects" aria-labelledby="projects-heading">
+                <h2 id="projects-heading">Projects</h2>
+                <article class="project">
+                    <a class="project-visual" href="https://vitrai.dominiquepiche.com/" aria-label="Open Vitrai">
+                        <img src="assets/vitrai_logo.png" alt="" width="100" height="100">
+                    </a>
+                    <div>
+                        <h3><a href="https://vitrai.dominiquepiche.com/">Vitrai</a></h3>
+                        <p>Stained glass pattern drafting, glass sheet layout, and 3D lampshade design in the browser.</p>
+                        <div class="project-links">
+                            <a href="https://vitrai.dominiquepiche.com/">Open app <span aria-hidden="true">↗</span></a>
+                            <a href="https://github.com/dompm/vitrai">GitHub <span aria-hidden="true">↗</span></a>
                         </div>
-
-                        <div class="mt-4 mb-5 mb-md-0">
-                            <a class="obfuscate-email" href="#" data-e="100,111,109,105,110,105,113,117,101,46,112,105,99,104,101,109,101,117,110,105,101,114,64,103,109,97,105,108,46,99,111,109" data-label="Email">Email</a><span class="link-separator">|</span>
-                            <a href="assets/cv_dominique_pichemeunier.pdf">CV</a><span class="link-separator">|</span>
-                            <a href="https://scholar.google.com/citations?user=ybPPnRgAAAAJ">Scholar</a><span class="link-separator">|</span>
-                            <a href="https://www.linkedin.com/in/dompm/">LinkedIn</a>
+                    </div>
+                </article>
+                <article class="project">
+                    <a class="project-visual woodworking" href="https://woodworking.dominiquepiche.com/" aria-label="Explore woodworking projects">
+                        <img src="assets/woodworking_document_unit.webp" alt="Pine document unit with compartments for folders" width="800" height="629" loading="lazy">
+                    </a>
+                    <div>
+                        <h3><a href="https://woodworking.dominiquepiche.com/">Woodworking</a></h3>
+                        <p>Furniture designs, project files, and build guides for my woodworking projects.</p>
+                        <div class="project-links">
+                            <a href="https://woodworking.dominiquepiche.com/">View projects <span aria-hidden="true">↗</span></a>
+                            <a href="https://github.com/dompm/woodworking">GitHub <span aria-hidden="true">↗</span></a>
                         </div>
                     </div>
-                    
-                    <div class="col-md-4 order-1 order-md-2 mb-4 mb-md-0">
-                        <img src="assets/dominique.jpg" class="img-fluid rounded-circle profile-img shadow-sm" alt="Dominique Piché-Meunier">
-                    </div>
+                </article>
+            </section>
+            <section id="research" aria-labelledby="research-heading">
+                <h2 id="research-heading">Research</h2>
+                <ul class="papers">
+                    <li class="paper">
+                        <img class="paper-teaser" src="assets/inversedof_teaser.gif" alt="Depth-of-field modeling research preview" width="320" height="240" loading="lazy">
+                        <div>
+                            <h3><a href="https://lvsn.github.io/inversedof/">Lens Parameter Estimation for Realistic Depth of Field Modeling</a></h3>
+                            <details><summary>Authors</summary><p>Dominique Piché-Meunier, Yannick Hold-Geoffroy, Jianming Zhang, Jean-François Lalonde</p></details>
+                        </div>
+                        <div class="venue"><abbr title="International Conference on Computer Vision" style="text-decoration: none;">ICCV</abbr> · 2023</div>
+                    </li>
+                    <li class="paper">
+                        <img class="paper-teaser" src="assets/pareto_teaser_warm.gif" alt="Salary structure optimization research preview" width="320" height="240" loading="lazy">
+                        <div>
+                            <h3><a href="https://salarystructureoptimization.github.io/">Multiobjective Optimisation for Designing Salary Structures</a></h3>
+                            <details><summary>Authors</summary><p>François Alexandre Tremblay, Dominique Piché-Meunier, Louis Dubois</p></details>
+                        </div>
+                        <div class="venue">CPAIOR · 2023</div>
+                    </li>
+                    <li class="paper">
+                        <img class="paper-teaser" src="assets/deepcalib_teaser.gif" alt="Lens and camera calibration research preview" width="320" height="240" loading="lazy">
+                        <div>
+                            <h3><a href="https://lvsn.github.io/deepcalib/">A Deep Perceptual Measure for Lens and Camera Calibration</a></h3>
+                            <details><summary>Authors</summary><p>Yannick Hold-Geoffroy, Dominique Piché-Meunier, Kalyan Sunkavalli, Jean-Charles Bazin, Francois Rameau, Jean-François Lalonde</p></details>
+                        </div>
+                        <div class="venue">IEEE TPAMI · 2023</div>
+                    </li>
+                    <li class="paper">
+                        <img class="paper-teaser" src="assets/robot_teaser.gif" alt="In vivo dosimetry research preview" width="320" height="240" loading="lazy">
+                        <div>
+                            <h3><a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.15257">A high-Z inorganic scintillator–based detector for time-resolved in vivo dosimetry</a></h3>
+                            <details><summary>Authors</summary><p>Erik B Jørgensen, et al. (including Dominique Piché-Meunier)</p></details>
+                        </div>
+                        <div class="venue">Medical Physics · 2021</div>
+                    </li>
+                </ul>
+            </section>
+            <section id="about" aria-labelledby="about-heading">
+                <h2 id="about-heading">About</h2>
+                <div class="about-copy">
+                    <p>I completed my master’s in electrical engineering at Université Laval’s <a href="https://iid.ulaval.ca/en/">Institute Intelligence and Data (IID)</a>, supervised by <a href="http://vision.gel.ulaval.ca/~jflalonde/">Jean-François Lalonde</a> and <a href="https://yannickhold.com/">Yannick Hold-Geoffroy</a>.</p>
+                    <p>During my master’s, I interned with Adobe Research and Adobe’s 3D &amp; Immersive team in San Francisco. Before that, I studied engineering physics at Université Laval.</p>
                 </div>
-
-                <hr class="my-5">
-
-                <h3 class="mb-4">Publications</h3>
-
-                <div class="row pub-row">
-                    <div class="col-md-4 col-lg-3">
-                        <img src="assets/inversedof_teaser.gif" class="pub-img" alt="inversedof">
-                    </div>
-                    <div class="col-md-8 col-lg-9">
-                        <a href="https://lvsn.github.io/inversedof/"><strong>Lens Parameter Estimation for Realistic Depth of Field Modeling</strong></a><br>
-                        <span class="small">Dominique Piché‑Meunier, Yannick Hold‑Geoffroy, Jianming Zhang, Jean‑François Lalonde</span><br>
-                        <i class="small text-muted">International Conference on Computer Vision (ICCV), 2023</i>
-                    </div>
-                </div>
-
-                <div class="row pub-row">
-                    <div class="col-md-4 col-lg-3">
-                        <img src="assets/pareto_teaser.gif" class="pub-img" alt="salary_structures">
-                    </div>
-                    <div class="col-md-8 col-lg-9">
-                        <a href="https://salarystructureoptimization.github.io/"><strong>Multiobjective Optimisation for Designing Salary Structures</strong></a><br>
-                        <span class="small text-muted">François Alexandre Tremblay, Dominique Piché‑Meunier, Louis Dubois</span><br>
-                        <i class="small text-muted">CPAIOR, 2023</i>
-                    </div>
-                </div>
-
-                <div class="row pub-row">
-                    <div class="col-md-4 col-lg-3">
-                        <img src="assets/deepcalib_teaser.gif" class="pub-img" alt="deepcalib">
-                    </div>
-                    <div class="col-md-8 col-lg-9">
-                        <a href="https://lvsn.github.io/deepcalib/"><strong>A Deep Perceptual Measure for Lens and Camera Calibration</strong></a><br>
-                        <span class="small">Yannick Hold‑Geoffroy, Dominique Piché‑Meunier, Kalyan Sunkavalli, Jean-Charles Bazin, Francois Rameau, Jean‑François Lalonde</span><br>
-                        <i class="small text-muted">IEEE TPAMI, 2023</i>
-                    </div>
-                </div>
-
-                <div class="row pub-row">
-                    <div class="col-md-4 col-lg-3">
-                        <img src="assets/robot_teaser.gif" class="pub-img" alt="dosimetry">
-                    </div>
-                    <div class="col-md-8 col-lg-9">
-                        <a href="https://aapm.onlinelibrary.wiley.com/doi/abs/10.1002/mp.15257"><strong>A high‐Z inorganic scintillator–based detector for time‐resolved in vivo dosimetry</strong></a><br>
-                        <span class="small text-muted">Erik B Jørgensen, et al. (including Dominique Piché-Meunier)</span><br>
-                        <i class="small text-muted">Medical Physics, 2021</i>
-                    </div>
-                </div>
-
-                <hr class="my-5">
-
-                <h3 class="mb-4">Projects</h3>
-
-                <div class="row pub-row">
-                    <div class="col-md-4 col-lg-3">
-                        <img src="assets/vitrai_logo.png" class="pub-img" alt="Vitrai Logo">
-                    </div>
-                    <div class="col-md-8 col-lg-9">
-                        <a href="https://vitrai.dominiquepiche.com/"><strong>Vitrai: Stained-Glass Planning App</strong></a><br>
-                        <span class="small text-secondary">A stained-glass planning web app. Runs SAM2 inference entirely on-device via WebGPU (ONNX Runtime Web) to segment pattern pieces, mapping real-world glass sheet textures onto each segmented polygon.</span><br>
-                        <i class="small text-muted"><a href="https://github.com/dompm/vitrai">GitHub</a></i>
-                    </div>
-                </div>
-
-                <footer class="mt-5 pt-5 text-center text-muted small">
-                    &copy; 2026 Dominique Piché-Meunier
-                </footer>
-
-            </div>
-        </div>
+            </section>
+        </main>
+        <footer id="contact">
+            <span>Dominique Piché-Meunier</span>
+            <a class="obfuscate-email" href="https://www.linkedin.com/in/dompm/" data-e="100,111,109,105,110,105,113,117,101,46,112,105,99,104,101,109,101,117,110,105,101,114,64,103,109,97,105,108,46,99,111,109" data-show-address>Contact on LinkedIn</a>
+        </footer>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Decode obfuscated email (char codes) – defeats basic scrapers that don't run JS
-        document.querySelectorAll('.obfuscate-email').forEach(function(el) {
-            var codes = el.dataset.e.split(',');
-            var email = String.fromCharCode.apply(null, codes);
+        // Keep the address out of the HTML text to deter basic email scrapers.
+        document.querySelectorAll('.obfuscate-email').forEach(function (el) {
+            var email = String.fromCharCode.apply(null, el.dataset.e.split(','));
             el.href = 'mailto:' + email;
-            if (!el.dataset.label) el.textContent = email;
+            if (el.hasAttribute('data-show-address')) el.textContent = email;
         });
     </script>
 </body>
